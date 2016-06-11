@@ -45,7 +45,8 @@ public class ListRegionsServlet extends HttpServlet {
                     .getRegionsEntity()
                     .findAll();
             for(Region region : regions) {
-                out.println(region.getName()+"has"
+                out.println(region.getName()+" has "
+                        +Integer.toString(region.getCountries().size())
                 );
             }
         } catch (NamingException e) {
