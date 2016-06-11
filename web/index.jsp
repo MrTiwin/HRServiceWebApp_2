@@ -10,8 +10,10 @@
   <head>
     <title>HR Service</title>
   </head>
-  <p>
+  <body>
     <p><a href="countRegions">Count Regions</a></p>
     <p><a href="listRegions">List Regions</a></p>
+    <p><a href="listCountries">List Countries</a></p>
   </body>
 </html>
+

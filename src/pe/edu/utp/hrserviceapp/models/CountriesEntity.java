@@ -58,7 +58,8 @@ public class CountriesEntity extends BaseEntity{
     }
 
     public Country findByName(String name) {
-        String query = DEFAULT_QUERY + " where country_name = " +
+        Country country = null;
+        String query = DEFAULT_QUERY + " where country_id = " +
                 "'" + name +"'";
         try {
             ResultSet rs = getConnection().createStatement()
@@ -67,7 +68,7 @@ public class CountriesEntity extends BaseEntity{
                 return null;
             }
             if(rs.next()) {
-                Country country = new Country(
+                country = new Country(
                         rs.getString("country_id"),
                         rs.getString("country_name"),
                         rs.getInt("region_id")
@@ -77,6 +78,31 @@ public class CountriesEntity extends BaseEntity{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return country;
     }
+
+    public List<Country> findByRegion (Region region){
+        String query = DEFAULT_QUERY + " where region_id ="+ region.getId();
+        List<Country> countries = null;
+        try {
+            ResultSet rs = getConnection().createStatement()
+                    .executeQuery(query);
+            if(rs == null) {
+                return null;
+            }
+            countries = new ArrayList<>();
+            while(rs.next()) {
+                Country country = new Country(
+                        rs.getString("country_id"),
+                        rs.getString("country_name"),
+                        rs.getInt("region_id")
+                );
+                countries.add(country);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return countries;
+    }
+
 }

@@ -81,18 +81,17 @@ public class HRService {
 
     public List<Region> findAllRegion(){
         List<Region> regions = getRegionsEntity().findAll();
-        if(regions != null){
+        if(regions != null)
             for(Region region : regions){
-                region.setCountries(getCountriesEntity().findAll());
+                region.setCountries(getCountriesEntity().findByRegion(region));
             }
-        }
+        return regions;
     }
 
     public List<Country> findAllCountries(){
         return getCountriesEntity().findAll();
     }
-
-    public Region findRegionBy(int id){
+    public Region findRegionById(int id){
         return getRegionsEntity().findById(id);
     }
 }

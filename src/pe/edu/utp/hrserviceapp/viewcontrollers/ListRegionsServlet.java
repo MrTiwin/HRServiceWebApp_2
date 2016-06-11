@@ -42,11 +42,10 @@ public class ListRegionsServlet extends HttpServlet {
 
             out.println("Region Name");
             List<Region> regions = service
-                    .getRegionsEntity()
-                    .findAll();
+                    .findAllRegion();
             for(Region region : regions) {
-                out.println(region.getName()+" has "
-                        +Integer.toString(region.getCountries().size())
+                out.println("Region " + region.getName()+ " has " + Integer.toString(
+                        region.getCountries().size()) + "countries"
                 );
             }
         } catch (NamingException e) {
