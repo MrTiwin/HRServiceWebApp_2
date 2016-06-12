@@ -11,23 +11,20 @@ public class ServiceBean implements Serializable{
     HRService service;
     InitialContext context=null;
     public ServiceBean(){
-        if (getContext() != null)
-            service = new HRService(getContext());
-    }
-
-    public InitialContext getContext(){
-        if(context==null) try{
+        try{
             context = new InitialContext();
+            service = new HRService(context);
         }catch (NamingException e){
             e.printStackTrace();
-        }else return context;
-        return null;
+        }
     }
 
     public int getRegionsCount(){
-        if(getContext()== null) return 0;
-        //return service.findAllRegion().size();
-        return 1;
+        return service.findAllRegion().size();
+    }
+
+    public int getCountriesCount(){
+        return service.findAllCountries().size();
     }
 }
 
