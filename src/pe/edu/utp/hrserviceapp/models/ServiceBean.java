@@ -26,5 +26,7 @@ public class ServiceBean implements Serializable{
     public int getCountriesCount(){
         return service.findAllCountries().size();
     }
+
+    //Utilizando Service Bean, presentar la relacion de regiones
 }
 
