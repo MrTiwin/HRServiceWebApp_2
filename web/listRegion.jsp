@@ -26,7 +26,7 @@
                         <th>Region</th>
                         <th>countries</th>
                     </tr>
-                    <c:forEach var="service" items="${service.allRegions}">
+                    <c:forEach var="region" items="${service.allRegions}">
                         <tr>
                             <td><c:out value="${region.name}"/></td>
                             <td><c:out value="${region.getCountryNames}"/></td>

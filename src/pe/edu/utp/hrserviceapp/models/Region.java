@@ -36,9 +36,8 @@ public class Region {
 
     public String getCountryNames(){
         String result ="";
-        for(Country country : countries){
+        for(Country country : countries)
             result += (result == "" ? country.getName() : ", " + country.getName()); //Parecido al If Else --JAVA ESTANDAR
-        }
         return result;
     }
 
