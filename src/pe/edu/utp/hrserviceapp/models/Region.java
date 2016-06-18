@@ -34,6 +34,14 @@ public class Region {
         return countries;
     }
 
+    public String getCountryNames(){
+        String result ="";
+        for(Country country : countries){
+            result += (result == "" ? country.getName() : ", " + country.getName()); //Parecido al If Else --JAVA ESTANDAR
+        }
+        return result;
+    }
+
     public void setCountries(List<Country> countries) {
         this.countries = countries;
     }

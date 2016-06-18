@@ -11,11 +11,12 @@
     <title>HR Service</title>
   </head>
   <body>
-    <p><a href="countRegions">Count Regions</a></p>
-    <p><a href="listRegions">List Regions</a></p>
-    <p><a href="listCountries">List Countries</a></p>
+    <p><a href="countRegionsWithServlet">Count Regions</a></p>
+    <p><a href="listRegionsWithServlet">List Regions (With Servlet)</a></p>
+    <p><a href="listCountriesWithServlet">List Countries</a></p>
     <p><a href="showRegionsCount.jsp">Show Regions Count</a></p>
     <p><a href="showCountriesCount.jsp">Show Countries Count</a></p>
+    <p><a href="listRegion.jsp">List Regions</a> </p>
   </body>
 </html>
 

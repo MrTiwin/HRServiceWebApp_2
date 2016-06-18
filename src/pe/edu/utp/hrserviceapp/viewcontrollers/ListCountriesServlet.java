@@ -17,7 +17,7 @@ import java.io.PrintWriter;
 /**
  * Created by TIWIN on 11/06/2016.
  */
-@WebServlet(name = "ListCountriesServlet", urlPatterns = "/listCountries")
+@WebServlet(name = "ListCountriesServlet", urlPatterns = "/listCountriesWithServlet")
 public class ListCountriesServlet extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
