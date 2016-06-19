@@ -18,6 +18,23 @@
         </webroots>
       </configuration>
     </facet>
+    <facet type="javaeeApplication" name="javaEEApplication2">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="application.xml" url="file://$MODULE_DIR$/.idea/dataSources.ids" />
+        </descriptors>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web2">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/.idea/artifacts" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/.idea" relative="/WEB-INF" />
+        </webroots>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />

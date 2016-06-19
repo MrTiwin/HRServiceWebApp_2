@@ -19,21 +19,19 @@
 <body>
 
     <div class="container">
-        <div class="jumbotron">
-                <div class="panel-heading">Lista de Regiones</div>
-                <table>
+        <div>Lista de Regiones</div>
+            <table>
+                <tr>
+                    <th>Region</th>
+                    <th>countries</th>
+                </tr>
+                <c:forEach var="region" items="${service.allRegions}">
                     <tr>
-                        <th>Region</th>
-                        <th>countries</th>
+                        <td><c:out value="${region.name}"/></td>
+                        <td><c:out value="${region.countryNames}"/></td>
                     </tr>
-                    <c:forEach var="region" items="${service.allRegions}">
-                        <tr>
-                            <td><c:out value="${region.name}"/></td>
-                            <td><c:out value="${region.getCountryNames}"/></td>
-                        </tr>
-                    </c:forEach>
-                </table>
-        </div>
+                </c:forEach>
+            </table>
     </div>
 
 </body>

@@ -81,6 +81,30 @@ public class CountriesEntity extends BaseEntity{
         return country;
     }
 
+    public List<Country> findCountriesWhereName (String text){
+        String query = DEFAULT_QUERY + "where country_name like '%'+ text +'%'";
+        try {
+            ResultSet rs = getConnection().createStatement()
+                    .executeQuery(query);
+            if(rs == null) {
+                return null;
+            }
+            List<Country> countries = new ArrayList<>();
+            while(rs.next()) {
+                Country country = new Country(
+                        rs.getString("country_id"),
+                        rs.getString("country_name"),
+                        rs.getInt("region_id")
+                );
+                countries.add(country);
+            }
+            return countries;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public List<Country> findByRegion (Region region){
         String query = DEFAULT_QUERY + " where region_id ="+ region.getId();
         List<Country> countries = null;

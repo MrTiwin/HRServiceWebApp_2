@@ -11,6 +11,7 @@ import java.util.List;
 public class ServiceBean implements Serializable{
     HRService service;
     InitialContext context=null;
+    String textCriterio="";
     public ServiceBean(){
         try{
             context = new InitialContext();
@@ -31,6 +32,8 @@ public class ServiceBean implements Serializable{
     public List<Region> getAllRegions() { return service.findAllRegion();}
 
     public List<Country> getAllCountries() { return service.findAllCountries();}
+
+    public void setTextCriterio(String text){this.textCriterio = text;}
 
     //Utilizando Service Bean, presentar la relacion de regiones
 }
